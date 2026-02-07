@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<title>💖</title>
+<style>
+    body {
+        background: #ffe6ee;
+        font-family: sans-serif;
+        text-align: center;
+        padding-top: 50px;
+    }
+    .heart {
+        font-size: 80px;
+        animation: beat 1s infinite;
+    }
+    @keyframes beat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+    }
+    h1 {
+        color: #d6336c;
+    }
+    button {
+        font-size: 20px;
+        padding: 10px 25px;
+        margin: 15px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    #yes {
+        background: #ff4d6d;
+        color: white;
+    }
+    #no {
+        background: #adb5bd;
+        color: white;
+    }
+    #result {
+        display: none;
+        margin-top: 30px;
+    }
+    img {
+        width: 250px;
+        border-radius: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="heart">❤️</div>
+<h1>გიყვარვარ თუ არა?</h1>
+
+<button id="yes">კი 💕</button>
+<button id="no">არა 🙄</button>
+
+<div id="result">
+    <img src="love.jpg" alt="love">
+    <h1>მე შენ მიყვარხარ<br>ჩემო პატარა პრინცესა 💖💖💖</h1>
+</div>
+
+<script>
+let yesBtn = document.getElementById("yes");
+let noBtn = document.getElementById("no");
+let noSize = 20;
+let yesSize = 20;
+
+noBtn.onclick = () => {
+    noSize -= 2;
+    yesSize += 3;
+    noBtn.style.fontSize = noSize + "px";
+    yesBtn.style.fontSize = yesSize + "px";
+};
+
+yesBtn.onclick = () => {
+    document.querySelector(".heart").style.display = "none";
+    document.querySelector("h1").style.display = "none";
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+    document.getElementById("result").style.display = "block";
+};
+</script>
+
+</body>
+</html>
